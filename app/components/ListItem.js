@@ -14,12 +14,12 @@ function ListItem({ image, onPress, subTitle, title }) {
     <TouchableHighlight
       underlayColor="black"
       activeOpacity={0.5}
-      onPress={() => console.log('Data Saver was clicked')}
+      onPress={() => console.log(`${title} was clicked`)}
     >
       <View style={styles.container}>
         <View style={styles.content}>
           {image && <Image source={image} />}
-          <Text style={styles.label}>Data Saver</Text>
+          <Text style={styles.label}>{title}</Text>
           {subTitle && <Text>{subTitle}</Text>}
         </View>
         <View>
