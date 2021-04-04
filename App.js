@@ -3,12 +3,17 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import BottomTabNavigator from './app/navigation/BottomTabNavigator';
+import ListItem from './app/components/ListItem'
+import Screen from './app/components/Screen'
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <BottomTabNavigator/>
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <BottomTabNavigator/>
+    // </NavigationContainer>
+    <Screen>
+        <ListItem />
+    </Screen>
   );
 }
 
