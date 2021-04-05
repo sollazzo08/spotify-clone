@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
+import { FlatList, View, ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
 import colors from '../config/colors';
 import Screen from '../components/Screen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import ListItemCard from '../components/ListItemCard';
+import DATA from '../FakeData/settings.json'
+
 
 function HomeScreen({navigation}) {
   return (
@@ -17,6 +20,14 @@ function HomeScreen({navigation}) {
             <MaterialCommunityIcons name="cog-outline" size={30} color="white" onPress={() => navigation.navigate('Settings')}/>
           </View>
         </View>
+        <View style={styles.recentContainer}>
+         <FlatList 
+          data={DATA}
+          renderItem={ListItemCard}
+          keyExtractor={item => item.title}
+          numColumns={2}
+         />
+        </View>
       </ScrollView>
     </Screen>
   );
@@ -27,6 +38,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 40,
     flexDirection: 'row',
+    marginHorizontal: 20
+  },
+  recentContainer: {
     marginHorizontal: 20
   },
   header: {

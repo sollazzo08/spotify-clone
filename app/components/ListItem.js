@@ -37,7 +37,7 @@ function ListItem({ image, onPress, subTitle, title, size }) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    minHeight: 60,
+    minHeight: 50,
     flexDirection: 'row',
     marginHorizontal: 15,
     backgroundColor: colors.primary,
@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   title: {
     color: 'white',
     fontSize: 16,
+    fontWeight: '500'
   },
   subTitle: {
     fontSize: 60,

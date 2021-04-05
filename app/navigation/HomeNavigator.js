@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SettingsScreen from '../screens/SettingsScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -20,19 +19,18 @@ function HomeNavigator() {
         options={{
           headerStyle: {
             backgroundColor: colors.grey,
+      
+            borderBottomColor: colors.primary
           },
           headerTitleStyle: {
             fontWeight: 'bold',
             color: colors.white
           },
+          headerBackTitleVisible: false,
         }}
       />
     </HomeStack.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {},
-});
 
 export default HomeNavigator;
