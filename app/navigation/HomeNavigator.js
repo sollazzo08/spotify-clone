@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SettingsScreen from '../screens/SettingsScreen';
 import HomeScreen from '../screens/HomeScreen';
 import colors from '../constants/colors';
+import AlbumScreen from '../screens/AlbumScreen';
 
 function HomeNavigator() {
   const HomeStack = createStackNavigator();
@@ -19,7 +20,6 @@ function HomeNavigator() {
         options={{
           headerStyle: {
             backgroundColor: colors.grey,
-      
             borderBottomColor: colors.primary
           },
           headerTitleStyle: {
@@ -29,6 +29,14 @@ function HomeNavigator() {
           headerBackTitleVisible: false,
         }}
       />
+      <HomeStack.Screen name="AlbumPage" component={AlbumScreen} options={{
+        headerBackTitleVisible: false,
+        headerStyle: {
+          backgroundColor: colors.grey,
+          borderBottomColor: colors.primary
+        },
+        
+      }}/>
     </HomeStack.Navigator>
   );
 }

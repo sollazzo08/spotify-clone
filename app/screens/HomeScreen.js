@@ -73,7 +73,7 @@ function HomeScreen({ navigation }) {
                   showsHorizontalScrollIndicator={false}
                   keyExtractor={(item) => item.title}
                   renderItem={({ item }) => {
-                    return <CoverCard image={item.image} title={item.title} />;
+                    return <CoverCard image={item.image} title={item.title} onPress={() => navigation.navigate('AlbumPage')}/>;
                   }}
                 />
               </View>
