@@ -11,12 +11,9 @@ import CoverCard from './app/components/CoverCard';
 
 export default function App() {
   return (
-    // <NavigationContainer>
-    //   <BottomTabNavigator/>
-    // </NavigationContainer>
-    <View style={styles.container}>
-      <CoverCard title="This is a test title" subTitle="This is a test subtitle" onPress={() => console.log('test')}/>
-    </View>
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
   );
 }
 
@@ -26,6 +23,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
-
   },
 });

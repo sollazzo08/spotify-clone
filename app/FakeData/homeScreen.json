@@ -39,33 +39,38 @@
     "data": [
       {
         "id": 1,
-        "title": "Liked Songs",
+        "title": "Mac Miller",
         "image": "swimming"
       },
       {
         "id": 2,
-        "title": "Discover Weekly",
-        "image": "swimming"
+        "title": "Pink FLoyd",
+        "image": "pinkFloyd"
       },
       {
         "id": 3,
-        "title": "My Shazam Tracks",
-        "image": "swimming"
+        "title": "The Beatles",
+        "image": "theBeatles"
       },
       {
         "id": 4,
-        "title": "Dwayne Johnson's Progress Workout Playlist",
-        "image": "swimming"
+        "title": "The Shins",
+        "image": "theShins"
       },
       {
         "id": 5,
-        "title": "Your top songs 2016",
-        "image": "swimming"
+        "title": "Alt-J",
+        "image": "altJ"
       },
       {
         "id": 6,
-        "title": "Throwback Workout",
-        "image": "swimming"
+        "title": "The Rolling Stones",
+        "image": "theRollingStones"
+      },     
+      {
+        "id": 7,
+        "title": "Chance The Rapper",
+        "image": "chanceTheRapper"
       }      
     ]
   }

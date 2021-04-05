@@ -1,13 +1,13 @@
 import React from 'react';
 import {
   Image,
-  Text,
   View,
   StyleSheet,
   TouchableWithoutFeedback,
 } from 'react-native';
 import colors from '../constants/colors';
-import { images } from '../constants/';
+import { images } from '../constants';
+import Text from './AppText'
 
 function ListItemCard({ image, onPress, title }) {
   return (
