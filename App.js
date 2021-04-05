@@ -10,10 +10,9 @@ import Button from './app/components/Button';
 
 export default function App() {
   return (
-    // <NavigationContainer>
-    //   <BottomTabNavigator/>
-    // </NavigationContainer>
-    <SettingsScreen />
+    <NavigationContainer>
+      <BottomTabNavigator/>
+    </NavigationContainer>
   );
 }
 
