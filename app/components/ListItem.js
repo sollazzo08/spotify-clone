@@ -5,32 +5,31 @@ import {
   StyleSheet,
   TouchableHighlight,
 } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {Swipeable} from 'react-native-gesture-handler'
 import colors from '../constants/colors';
 import AppText from './AppText'
 
-function ListItem({ image, onPress, subTitle, title, size }) {
+
+function ListItem({ image, IconComponent, onPress, subTitle, title, size }) {
   return (
-    <TouchableHighlight
-      underlayColor="black"
-      activeOpacity={0.5}
-      onPress={onPress}
-    >
-      <View style={styles.container}>
-          {image && <Image style={styles.image} source={image} />}
-        <View style={styles.content}>
-          <AppText size={size} style={styles.title}>{title}</AppText>
-          {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+    <Swipeable>
+      <TouchableHighlight
+        underlayColor="black"
+        activeOpacity={0.5}
+        onPress={onPress}
+      >
+        <View style={styles.container}>
+            {image && <Image style={styles.image} source={image} />}
+          <View style={styles.content}>
+            <AppText size={size} style={styles.title}>{title}</AppText>
+            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+          </View>
+          <View>
+            {IconComponent}
+          </View>
         </View>
-        <View>
-          <MaterialCommunityIcons
-            style={styles.icon}
-            size={30}
-            name="chevron-right"
-          />
-        </View>
-      </View>
-    </TouchableHighlight>
+      </TouchableHighlight>
+    </Swipeable>
   );
 }
 

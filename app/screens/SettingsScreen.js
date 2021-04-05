@@ -4,11 +4,14 @@ import Screen from '../components/Screen';
 import ListItem from '../components/ListItem';
 import Button from '../components/Button';
 import DATA from '../FakeData/settings.json';
+import Icon from '../components/Icon';
+import colors from '../constants/colors';
 
 function SettingsScreen() {
   const renderItem = ({ item }) => {
     return (
       <ListItem
+        IconComponent={<Icon name="chevron-right" size={30} />}
         title={item.title}
         onPress={() => console.log(`${item.title} was clicked`)}
       />
@@ -26,6 +29,7 @@ function SettingsScreen() {
           <View style={styles.profile}>
             <ListItem
               image={require('../../assets/favicon.jpeg')}
+              IconComponent={<Icon name="chevron-right" size={30} />}
               onPress={() => console.log('View profile was pressed')}
               title="Michael Sollazzo"
               subTitle="View Profile"
