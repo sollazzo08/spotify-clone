@@ -2,25 +2,25 @@ import React from 'react';
 import {
   Image,
   View,
-  Text,
   StyleSheet,
   TouchableHighlight,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../config/colors';
+import AppText from './AppText'
 
-function ListItem({ image, onPress, subTitle, title }) {
+function ListItem({ image, onPress, subTitle, title, size }) {
   return (
     <TouchableHighlight
       underlayColor="black"
       activeOpacity={0.5}
-      onPress={() => console.log(`${title} was clicked`)}
+      onPress={onPress}
     >
       <View style={styles.container}>
+          {image && <Image style={styles.image} source={image} />}
         <View style={styles.content}>
-          {image && <Image source={image} />}
-          <Text style={styles.label}>{title}</Text>
-          {subTitle && <Text>{subTitle}</Text>}
+          <AppText size={size} style={styles.title}>{title}</AppText>
+          {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
         </View>
         <View>
           <MaterialCommunityIcons
@@ -37,21 +37,33 @@ function ListItem({ image, onPress, subTitle, title }) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    height: 60,
+    minHeight: 60,
     flexDirection: 'row',
     marginHorizontal: 15,
     backgroundColor: colors.primary,
   },
   content: {
     flex: 1,
+    flexDirection: 'column'
   },
   icon: {
     color: colors.lightgrey,
   },
-  label: {
+  image: {
+    width: 55,
+    height: 55,
+    borderRadius: 35,
+    marginRight: 20
+  },
+  title: {
     color: 'white',
     fontSize: 16,
   },
+  subTitle: {
+    fontSize: 60,
+    paddingTop: 5,
+    color: colors.white
+  }
 });
 
 export default ListItem;

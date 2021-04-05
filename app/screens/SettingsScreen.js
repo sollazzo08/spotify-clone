@@ -4,73 +4,40 @@ import Screen from '../components/Screen';
 import ListItem from '../components/ListItem';
 import Button from '../components/Button';
 import { ScrollView } from 'react-native-gesture-handler';
+import DATA from '../FakeData/settings.json';
 
-const DATA = [
-  {
-    id: 1,
-    title: 'Data Saver',
-    targetScreen: 'DataSaver',
-  },
-  {
-    id: 2,
-    title: 'Account',
-    targetScreen: 'Account',
-  },
-  {
-    id: 3,
-    title: 'Devices',
-    targetScreen: 'Devices',
-  },
-  {
-    id: 4,
-    title: 'Car',
-    targetScreen: 'Car',
-  },
-  {
-    id: 5,
-    title: 'Voice Interactions',
-    targetScreen: 'VoiceInteractions',
-  },
-  {
-    id: 6,
-    title: 'Connect To Apps',
-    targetScreen: 'ConnectToApps',
-  },
-  {
-    id: 7,
-    title: 'Storage',
-    targetScreen: 'Storage',
-  },
-  {
-    id: 8,
-    title: 'Notifications',
-    targetScreen: 'Notifications',
-  },
-  {
-    id: 9,
-    title: 'Local Files',
-    targetScreen: 'LocalFiles',
-  },
-  {
-    id: 10,
-    title: 'About',
-    targetScreen: 'About',
-  },
-];
 function SettingsScreen() {
   const renderItem = ({ item }) => {
-    return <ListItem title={item.title} />;
+    return (
+      <ListItem
+        title={item.title}
+        onPress={() => console.log(`${item.title} was clicked`)}
+      />
+    );
   };
+
   return (
     <Screen>
       <ScrollView>
+        <View style={styles.profile}>
+          <ListItem
+            image={require('../../assets/favicon.jpeg')}
+            onPress={() => console.log('View profile was pressed')}
+            title="Michael Sollazzo"
+            subTitle="View Profile"
+            size={28}
+          />
+        </View>
         <FlatList
           data={DATA}
           renderItem={renderItem}
           keyExtractor={(item) => item.title}
         />
         <View style={styles.btnContainer}>
-          <Button onPress={() => console.log("Log Out was pressed")} title="LOG OUT"/>
+          <Button
+            onPress={() => console.log('Log Out was pressed')}
+            title="LOG OUT"
+          />
         </View>
       </ScrollView>
     </Screen>
@@ -82,7 +49,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginHorizontal: 110,
-    marginTop: 40
+    marginTop: 40,
+  },
+  profile: {
+    marginTop: 60,
+    marginBottom: 40,
   },
 });
 

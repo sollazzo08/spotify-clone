@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Data Saver",
+    "targetScreen": "DataSaver"
+  },
+  {
+    "id": 2,
+    "title": "Account",
+    "targetScreen": "Account"
+  },
+  {
+    "id": 3,
+    "title": "Devices",
+    "targetScreen": "Devices"
+  },
+  {
+    "id": 4,
+    "title": "Car",
+    "targetScreen": "Car"
+  },
+  {
+    "id": 5,
+    "title": "Voice Interactions",
+    "targetScreen": "VoiceInteractions"
+  },
+  {
+    "id": 6,
+    "title": "Connect To Apps",
+    "targetScreen": "ConnectToApps"
+  },
+  {
+    "id": 7,
+    "title": "Storage",
+    "targetScreen": "Storage"
+  },
+  {
+    "id": 8,
+    "title": "Notifications",
+    "targetScreen": "Notifications"
+  },
+  {
+    "id": 9,
+    "title": "Local Files",
+    "targetScreen": "LocalFiles"
+  },
+  {
+    "id": 10,
+    "title": "About",
+    "targetScreen": "About"
+  }
+]
