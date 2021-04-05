@@ -6,7 +6,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import colors from '../config/colors';
+import colors from '../constants/colors';
 import AppText from './AppText'
 
 function ListItem({ image, onPress, subTitle, title, size }) {

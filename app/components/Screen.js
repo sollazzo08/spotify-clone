@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
-import colors from '../config/colors';
+import colors from '../constants/colors';
 
 function Screen({ children, style }) {
   return (

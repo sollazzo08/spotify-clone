@@ -6,20 +6,22 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
 } from 'react-native';
-import colors from '../config/colors';
+import colors from '../constants/colors';
+import { images } from '../constants'
 
 function ListItemCard({ image, onPress, title }) {
+
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
         <View>
           <Image
             style={styles.image}
-            source={require('../../assets/favicon.jpeg')}
+            source={images[image]}
           />
         </View>
         <View>
-          <Text style={styles.title}>Test</Text>
+          <Text style={styles.title}>{title}</Text>
         </View>
       </View>
     </TouchableWithoutFeedback>

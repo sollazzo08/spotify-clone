@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Screen from '../components/Screen'
-import colors from '../config/colors'
+import colors from '../constants/colors'
 
 function SearchScreen() {
   return (

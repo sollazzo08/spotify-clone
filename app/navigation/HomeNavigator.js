@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import SettingsScreen from '../screens/SettingsScreen';
 import HomeScreen from '../screens/HomeScreen';
-import colors from '../config/colors';
+import colors from '../constants/colors';
 
 function HomeNavigator() {
   const HomeStack = createStackNavigator();

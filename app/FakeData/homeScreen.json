@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Good evening",
+    "data": [
+      {
+        "id": 1,
+        "title": "Liked Songs",
+        "image": "swimming"
+      },
+      {
+        "id": 2,
+        "title": "Discover Weekly",
+        "image": "swimming"
+      },
+      {
+        "id": 3,
+        "title": "My Shazam Tracks",
+        "image": "swimming"
+      },
+      {
+        "id": 4,
+        "title": "Dwayne Johnson's Progress Workout Playlist",
+        "image": "swimming"
+      },
+      {
+        "id": 5,
+        "title": "Your top songs 2016",
+        "image": "swimming"
+      },
+      {
+        "id": 6,
+        "title": "Throwback Workout",
+        "image": "swimming"
+      }
+    ]
+  },
+  {
+    "title": "Recently Played",
+    "data": [
+      {
+        "id": 1,
+        "title": "Liked Songs",
+        "image": "swimming"
+      },
+      {
+        "id": 2,
+        "title": "Discover Weekly",
+        "image": "swimming"
+      },
+      {
+        "id": 3,
+        "title": "My Shazam Tracks",
+        "image": "swimming"
+      },
+      {
+        "id": 4,
+        "title": "Dwayne Johnson's Progress Workout Playlist",
+        "image": "swimming"
+      },
+      {
+        "id": 5,
+        "title": "Your top songs 2016",
+        "image": "swimming"
+      },
+      {
+        "id": 6,
+        "title": "Throwback Workout",
+        "image": "swimming"
+      }      
+    ]
+  }
+]

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import colors from '../config/colors';
+import colors from '../constants/colors';
 import Screen from '../components/Screen';
 
 function YourLibraryScreen() {

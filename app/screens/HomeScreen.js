@@ -1,17 +1,62 @@
 import React from 'react';
-import { FlatList, View, ScrollView, StatusBar, StyleSheet, Text } from 'react-native';
-import colors from '../config/colors';
+import {
+  FlatList,
+  View,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  SectionList,
+} from 'react-native';
+import colors from '../constants/colors';
 import Screen from '../components/Screen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ListItemCard from '../components/ListItemCard';
-import DATA from '../FakeData/settings.json'
+import DATA from '../FakeData/homeScreen.json';
+import { images } from '../constants';
 
-
-function HomeScreen({navigation}) {
+function HomeScreen({ navigation }) {
   return (
     <Screen>
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.container}>
+      <SectionList
+        sections={DATA}
+        keyExtractor={item => item.title}
+        stickySectionHeadersEnabled={false}
+        renderSectionHeader={({ section }) => {
+          return(
+          <>
+              <Text style={{ color: colors.white, fontSize: 30 }}>
+                {section.title}
+              </Text>
+            <FlatList 
+              data={section.data}
+              keyExtractor={item => item.title}
+              numColumns={2}
+              renderItem={({item}) => {
+                return (
+                  <ListItemCard
+                    image={item.image}
+                    title={item.title}
+                  />
+                )
+              }}
+            />
+          </>
+          )
+          
+        }}
+        renderItem={({item}) => {
+       
+          return (
+            <ListItemCard
+              image={item.image}
+              item={item.title}
+            />
+          );
+        }}
+      />
+
+      {/* <View style={styles.container}>
           <View style={styles.header}>
             <Text style={{ color: colors.white, fontSize: 30 }}>Good evening</Text>
           </View>
@@ -27,30 +72,29 @@ function HomeScreen({navigation}) {
           keyExtractor={item => item.title}
           numColumns={2}
          />
-        </View>
-      </ScrollView>
+        </View> */}
     </Screen>
   );
-} 
+}
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     height: 40,
     flexDirection: 'row',
-    marginHorizontal: 20
+    marginHorizontal: 20,
   },
   recentContainer: {
-    marginHorizontal: 20
+    marginHorizontal: 20,
   },
   header: {
-    flex: 1
+    flex: 1,
   },
   icons: {
     width: 80,
     justifyContent: 'space-between',
-    flexDirection: 'row'
-  }
+    flexDirection: 'row',
+  },
 });
 
 export default HomeScreen;
