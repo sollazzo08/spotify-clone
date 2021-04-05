@@ -7,18 +7,14 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import colors from '../constants/colors';
-import { images } from '../constants'
+import { images } from '../constants/';
 
 function ListItemCard({ image, onPress, title }) {
-
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
         <View>
-          <Image
-            style={styles.image}
-            source={images[image]}
-          />
+          <Image style={styles.image} source={images[image]} />
         </View>
         <View>
           <Text style={styles.title}>{title}</Text>
