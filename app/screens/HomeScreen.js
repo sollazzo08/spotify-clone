@@ -6,10 +6,15 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ListItemCard from '../components/ListItemCard';
 import DATA from '../FakeData/homeScreen.json';
 import CoverCard from '../components/CoverCard';
+import SvgBackground from '../Icons/Svg.Background'
+
 
 function HomeScreen({ navigation }) {
   return (
     <Screen>
+      <View style={{position: 'absolute'}}>
+        <SvgBackground />
+      </View>
       <SectionList
         sections={DATA}
         keyExtractor={(item) => item.title}
@@ -91,6 +96,7 @@ const styles = StyleSheet.create({
     height: 40,
     flexDirection: 'row',
     marginHorizontal: 20,
+    marginTop: 40
   },
   goodEveningContainer: {
     marginHorizontal: 20,
