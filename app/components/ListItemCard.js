@@ -27,11 +27,11 @@ function ListItemCard({ image, onPress, title }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.grey,
-    height: 60,
+    height: 50,
     width: 180,
     marginTop: 10,
     marginRight: 10,
-    borderRadius: 8,
+    borderRadius: 5,
     alignItems: 'center',
     flexDirection: 'row',
     overflow: 'hidden',

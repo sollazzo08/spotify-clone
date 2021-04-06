@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Your top genres",
+    "data": [
+      {
+        "id": "1",
+        "title": "Rock",
+        "color": "red"
+      },
+      {
+        "id": "2",
+        "title": "Indie",
+        "color": "purple"
+      }
+    ]
+  },
+  {
+    "title": "Popular Podcast Cateroies",
+    "data": [
+      {
+        "id": "1",
+        "title": "Educational",
+        "color": "lightcoral"
+      },
+      {
+        "id": "2",
+        "title": "True Crime Scene",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "title": "Browse All",
+    "data": [
+      {
+        "id": "1",
+        "title": "Podcasts",
+        "color": "dodgerblue"
+      },
+      {
+        "id": "2",
+        "title": "Made For You",
+        "color": "lightgrey"
+      },
+      {
+        "id": "3",
+        "title": "Charts",
+        "color": "green"
+      },
+      {
+        "id": "4",
+        "title": "New Releases",
+        "color": "lightblue"
+      },
+      {
+        "id": "5",
+        "title": "Radio",
+        "color": "lightgreen"
+      },
+      {
+        "id": "6",
+        "title": "Discover",
+        "color": "grey"
+      },
+      {
+        "id": "7",
+        "title": "Concerts",
+        "color": "pink"
+      },
+      {
+        "id": "8",
+        "title": "Pop",
+        "color": "aqua"
+      },
+      {
+        "id": "9",
+        "title": "Hip Hop",
+        "color": "blueviolet"
+      },
+      {
+        "id": "10",
+        "title": "Country",
+        "color": "cadetblue"
+      },
+      {
+        "id": "11",
+        "title": "Latin",
+        "color": "burlywood"
+      },
+      {
+        "id": "12",
+        "title": "Mood",
+        "color": "darkblue"
+      },
+      {
+        "id": "13",
+        "title": "Dance/Electronic",
+        "color": "darkgreen"
+      },
+      {
+        "id": "14",
+        "title": "Workout",
+        "color": "Darkcyan"
+      },
+      {
+        "id": "15",
+        "title": "R&B",
+        "color": "darkorange"
+      },
+      {
+        "id": "16",
+        "title": "Focus",
+        "color": "darkred"
+      },
+      {
+        "id": "17",
+        "title": "EQUAL",
+        "color": "fuchsia"
+      },
+      {
+        "id": "18",
+        "title": "Stop Asian Hate",
+        "color": "forestgreen"
+      },
+      {
+        "id": "19",
+        "title": "Gaming",
+        "color": "goldenrod"
+      },
+      {
+        "id": "20",
+        "title": "Chill",
+        "color": "indianred"
+      }
+    ]
+  }
+]

@@ -8,12 +8,14 @@ import Screen from './app/components/Screen';
 import SettingsScreen from './app/screens/SettingsScreen';
 import Button from './app/components/Button';
 import CoverCard from './app/components/CoverCard';
+import GenreCard from './app/components/GenreCard';
 
 export default function App() {
   return (
     <NavigationContainer>
       <BottomTabNavigator />
     </NavigationContainer>
+
   );
 }
 

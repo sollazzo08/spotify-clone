@@ -1,19 +1,10 @@
 import React from 'react';
-import {
-  FlatList,
-  View,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  SectionList,
-} from 'react-native';
+import { FlatList, View, StyleSheet, Text, SectionList } from 'react-native';
 import colors from '../constants/colors';
 import Screen from '../components/Screen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ListItemCard from '../components/ListItemCard';
 import DATA from '../FakeData/homeScreen.json';
-import { images } from '../constants';
 import CoverCard from '../components/CoverCard';
 
 function HomeScreen({ navigation }) {
@@ -36,13 +27,13 @@ function HomeScreen({ navigation }) {
                   <View style={styles.icons}>
                     <MaterialCommunityIcons
                       name="clock-outline"
-                      size={30}
-                      color="white"
+                      size={27}
+                      color={colors.lightgrey}
                     />
                     <MaterialCommunityIcons
                       name="cog-outline"
-                      size={30}
-                      color="white"
+                      size={27}
+                      color={colors.lightgrey}
                       onPress={() => navigation.navigate('Settings')}
                     />
                   </View>
@@ -73,7 +64,13 @@ function HomeScreen({ navigation }) {
                   showsHorizontalScrollIndicator={false}
                   keyExtractor={(item) => item.title}
                   renderItem={({ item }) => {
-                    return <CoverCard image={item.image} title={item.title} onPress={() => navigation.navigate('AlbumPage')}/>;
+                    return (
+                      <CoverCard
+                        image={item.image}
+                        title={item.title}
+                        onPress={() => navigation.navigate('AlbumPage')}
+                      />
+                    );
                   }}
                 />
               </View>
