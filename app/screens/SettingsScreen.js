@@ -11,7 +11,7 @@ function SettingsScreen() {
   const renderItem = ({ item }) => {
     return (
       <ListItem
-        IconComponent={<Icon name="chevron-right" size={30} />}
+        IconComponent={<Icon name="chevron-right" size={50} />}
         title={item.title}
         onPress={() => console.log(`${item.title} was clicked`)}
       />
@@ -29,7 +29,7 @@ function SettingsScreen() {
           <View style={styles.profile}>
             <ListItem
               image={require('../../assets/favicon.jpeg')}
-              IconComponent={<Icon name="chevron-right" size={30} />}
+              IconComponent={<Icon name="chevron-right" size={50} />}
               onPress={() => console.log('View profile was pressed')}
               title="Michael Sollazzo"
               subTitle="View Profile"

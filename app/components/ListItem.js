@@ -1,32 +1,35 @@
 import React from 'react';
-import {
-  Image,
-  View,
-  StyleSheet,
-  TouchableHighlight,
-} from 'react-native';
-import {Swipeable} from 'react-native-gesture-handler'
+import { Image, View, StyleSheet, TouchableHighlight } from 'react-native';
+import { Swipeable } from 'react-native-gesture-handler';
 import colors from '../constants/colors';
-import AppText from './AppText'
+import AppText from './AppText';
 
-
-function ListItem({ image, IconComponent, onPress, subTitle, title, size }) {
+function ListItem({
+  image,
+  IconComponent,
+  onPress,
+  renderRightActions: rightAction,
+  renderLeftActions: leftAction,
+  subTitle,
+  title,
+  size,
+}) {
   return (
-    <Swipeable>
+    <Swipeable renderRightActions={rightAction} renderLeftActions={leftAction}>
       <TouchableHighlight
         underlayColor="black"
         activeOpacity={0.5}
         onPress={onPress}
       >
         <View style={styles.container}>
-            {image && <Image style={styles.image} source={image} />}
+          {image && <Image style={styles.image} source={image} />}
           <View style={styles.content}>
-            <AppText size={size} style={styles.title}>{title}</AppText>
+            <AppText size={size} style={styles.title}>
+              {title}
+            </AppText>
             {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
           </View>
-          <View>
-            {IconComponent}
-          </View>
+          <View>{IconComponent}</View>
         </View>
       </TouchableHighlight>
     </Swipeable>
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   icon: {
     color: colors.lightgrey,
@@ -52,18 +55,18 @@ const styles = StyleSheet.create({
     width: 55,
     height: 55,
     borderRadius: 35,
-    marginRight: 20
+    marginRight: 20,
   },
   title: {
     color: 'white',
     fontSize: 16,
-    fontWeight: '500'
+    fontWeight: '500',
   },
   subTitle: {
     fontSize: 60,
     paddingTop: 5,
-    color: colors.white
-  }
+    color: colors.white,
+  },
 });
 
 export default ListItem;
