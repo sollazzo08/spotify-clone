@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, SectionList, FlatList } from 'react-native';
 
 import GenreCard from '../components/GenreCard';
 import Screen from '../components/Screen';
+import { colors, myStyles } from '../constants';
 import DATA from '../FakeData/generes.json';
 
 function SearchScreen() {
@@ -17,7 +18,14 @@ function SearchScreen() {
             return (
               <>
                 <View>
-                  <Text style={{ color: 'white' }}>{section.title}</Text>
+                  <Text
+                    style={[
+                      myStyles.textOpenSans16,
+                      { color: colors.white, paddingBottom: 10 },
+                    ]}
+                  >
+                    {section.title}
+                  </Text>
                 </View>
                 <FlatList
                   data={section.data}
@@ -38,7 +46,14 @@ function SearchScreen() {
             return (
               <>
                 <View>
-                  <Text style={{ color: 'white' }}>{section.title}</Text>
+                  <Text
+                    style={[
+                      myStyles.textOpenSans16,
+                      { color: colors.white, paddingBottom: 10 },
+                    ]}
+                  >
+                    {section.title}
+                  </Text>
                 </View>
                 <FlatList
                   data={section.data}
@@ -61,7 +76,14 @@ function SearchScreen() {
             return (
               <>
                 <View>
-                  <Text style={{ color: 'white' }}>{section.title}</Text>
+                  <Text
+                    style={[
+                      myStyles.textOpenSans16,
+                      { color: colors.white, paddingBottom: 10 },
+                    ]}
+                  >
+                    {section.title}
+                  </Text>
                 </View>
                 <FlatList
                   data={section.data}

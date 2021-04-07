@@ -28,7 +28,7 @@ function SettingsScreen() {
         ListHeaderComponent={
           <View style={styles.profile}>
             <ListItem
-              image={require('../../assets/favicon.jpeg')}
+              image={require('../assets/favicon.jpeg')}
               IconComponent={<Icon name="chevron-right" size={50} />}
               onPress={() => console.log('View profile was pressed')}
               title="Michael Sollazzo"

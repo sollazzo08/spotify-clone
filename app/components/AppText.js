@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
-function AppText({ children, style, size }) {
+function AppText({ children, style}) {
   return (
-    <Text style={[style, { fontSize: size }]} numberOfLines={1}>
+    <Text style={[style]} numberOfLines={1}>
       {children}
     </Text>
   );

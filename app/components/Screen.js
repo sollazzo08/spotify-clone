@@ -1,14 +1,10 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, StatusBar, View } from 'react-native';
 import colors from '../constants/colors';
-import SvgBackground from '../Icons/Svg.Background'
+import SvgBackground from '../Icons/Svg.Background';
 function Screen({ children, style }) {
   return (
-
-    <SafeAreaView style={[styles.container, style]}>{children}
-
-    </SafeAreaView>
-   
+    <SafeAreaView style={[styles.container, style]}>{children}</SafeAreaView>
   );
 }
 

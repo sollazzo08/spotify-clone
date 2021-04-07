@@ -1,11 +1,9 @@
-const gothamLight = require('../../assets/fonts/GothamLight.ttf');
-const gothamMedium = require('../../assets/fonts/GothamMedium.ttf');
-const gothamBold = require('../../assets/fonts/GothamBold.ttf');
+const openSansBold = require('../assets/fonts/Open_Sans/OpenSans-Bold.ttf')
 
 export default 
+[
   {
-    gothamLight,
-    gothamMedium,
-    gothamBold: 'gothamBold'
-
+    openSansBold
   }
+]
+

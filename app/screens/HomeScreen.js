@@ -6,13 +6,13 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ListItemCard from '../components/ListItemCard';
 import DATA from '../FakeData/homeScreen.json';
 import CoverCard from '../components/CoverCard';
-import SvgBackground from '../Icons/Svg.Background'
-
+import SvgBackground from '../Icons/Svg.Background';
+import { myStyles } from '../constants';
 
 function HomeScreen({ navigation }) {
   return (
     <Screen>
-      <View style={{position: 'absolute'}}>
+      <View style={{ position: 'absolute' }}>
         <SvgBackground />
       </View>
       <SectionList
@@ -25,7 +25,7 @@ function HomeScreen({ navigation }) {
               <>
                 <View style={styles.container}>
                   <View style={styles.header}>
-                    <Text style={{ color: colors.white, fontSize: 30 }}>
+                    <Text style={[myStyles.textOpenSans24, { color: 'white' }]}>
                       {section.title}
                     </Text>
                   </View>
@@ -60,7 +60,12 @@ function HomeScreen({ navigation }) {
           else if (section.title === 'Recently Played')
             return (
               <View style={styles.recentContainer}>
-                <Text style={{ color: colors.white, fontSize: 30 }}>
+                <Text
+                  style={[
+                    myStyles.textOpenSans24,
+                    { color: colors.white, paddingBottom: 10 },
+                  ]}
+                >
                   {section.title}
                 </Text>
                 <FlatList
@@ -96,7 +101,7 @@ const styles = StyleSheet.create({
     height: 40,
     flexDirection: 'row',
     marginHorizontal: 20,
-    marginTop: 40
+    marginTop: 40,
   },
   goodEveningContainer: {
     marginHorizontal: 20,

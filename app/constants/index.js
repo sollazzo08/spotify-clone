@@ -1,4 +1,8 @@
 import images from './preloadImages';
+import colors from './colors'
+import myStyles from './globalStyles'
+import cache from './cache'
+import fonts from './fonts'
 
-export { images };
+export { cache, colors, fonts, myStyles, images };
 
