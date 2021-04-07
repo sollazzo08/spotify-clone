@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
   },
   textContainer:{
     width: '70%',
-
   },
   title: {
     color: colors.white,
