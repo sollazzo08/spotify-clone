@@ -11,7 +11,7 @@ function Screen({ children, style }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0b0d15',
+    backgroundColor: colors.primary,
     paddingTop: StatusBar.currentHeight,
   },
 });

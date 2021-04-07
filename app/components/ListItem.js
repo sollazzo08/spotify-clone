@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   subTitle: {
-    fontSize: 60,
+    fontSize: 16,
     paddingTop: 5,
     color: colors.white,
   },

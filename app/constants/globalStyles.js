@@ -1,6 +1,9 @@
 import fonts from './fonts'
 
 export default {
+  textOpenSans10: {fontFamily: fonts.openSansBold, fontSize: 10},
+  textOpenSans12: {fontFamily: fonts.openSansBold, fontSize: 12},
+  textOpenSans14: {fontFamily: fonts.openSansBold, fontSize: 14},
   textOpenSans16: {fontFamily: fonts.openSansBold, fontSize: 16},
   textOpenSans18: {fontFamily: fonts.openSansBold, fontSize: 18},
   textOpenSans20: {fontFamily: fonts.openSansBold, fontSize: 20},

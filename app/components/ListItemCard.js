@@ -6,7 +6,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import colors from '../constants/colors';
-import { images } from '../constants';
+import { images, myStyles } from '../constants';
 import Text from './AppText'
 
 function ListItemCard({ image, onPress, title }) {
@@ -16,8 +16,8 @@ function ListItemCard({ image, onPress, title }) {
         <View>
           <Image style={styles.image} source={images[image]} />
         </View>
-        <View>
-          <Text style={styles.title}>{title}</Text>
+        <View style={styles.titleContainer}>
+          <Text style={[myStyles.textOpenSans12, styles.title]} numberOfLines={2}>{title}</Text>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     width: 180,
     marginTop: 10,
     marginRight: 10,
-    borderRadius: 5,
+    borderRadius: 4,
     alignItems: 'center',
     flexDirection: 'row',
     overflow: 'hidden',
@@ -39,7 +39,11 @@ const styles = StyleSheet.create({
   image: {
     height: 60,
     width: 60,
-    marginRight: 15,
+    
+  },
+  titleContainer:{
+    width: '50%',
+    marginLeft: 10
   },
   title: {
     color: colors.white,

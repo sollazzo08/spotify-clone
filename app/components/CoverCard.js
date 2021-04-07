@@ -15,7 +15,7 @@ function CoverCard({ image, onPress, subTitle, title }) {
       <View style={styles.container}>
         <Image style={styles.image} source={images[image]} />
         <View style={styles.description}>
-          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.title} numberOfLines={1}>{title}</Text>
           {subTitle && <Text>{subTitle}</Text>}
         </View>
       </View>
@@ -25,22 +25,24 @@ function CoverCard({ image, onPress, subTitle, title }) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
+    height: 160,
     flexDirection: 'column',
     width: 130,
     justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 10,
+
+    marginRight: 13,
   },
   image: {
     height: 130,
     width: 130,
   },
   description: {
+    paddingTop: 10,
     flexDirection: 'column',
     color: colors.white,
   },
   title: {
+    fontSize: 14,
     color: colors.white,
   },
 });

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
+import {myStyles} from '../constants'
 
-function AppText({ children, style}) {
+function AppText({ children,numberOfLines, style,}) {
   return (
-    <Text style={[style]} numberOfLines={1}>
+    <Text style={[styles.title, style]} numberOfLines={numberOfLines}>
       {children}
     </Text>
   );
@@ -12,9 +13,6 @@ function AppText({ children, style}) {
 const styles = StyleSheet.create({
   title: {
     fontSize: 16,
-  },
-  subTitle: {
-    fontSize: 90,
   },
 });
 

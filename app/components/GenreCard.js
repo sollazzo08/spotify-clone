@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import { myStyles } from '../constants';
 import colors from '../constants/colors';
 import Text from './AppText'
 
@@ -7,7 +8,9 @@ import Text from './AppText'
 function GenreCard({backgroundColor = colors.lightgrey, title}) {
   return (
     <View style={[styles.container, {backgroundColor}]}>
-      <Text style={styles.title2}>{title}</Text>
+      <View style={styles.textContainer}>
+        <Text style={[myStyles.textOpenSans18,styles.title]} numberOfLines={2}>{title}</Text>
+      </View>
     </View>
   );
 }
@@ -20,10 +23,12 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     marginHorizontal: 7,
   },
-  title2: {
+  textContainer:{
+    width: '70%',
+
+  },
+  title: {
     color: colors.white,
-    fontSize: 20,
-    fontWeight: 'bold',
     position: 'absolute',
     top: 6,
     left: 15
