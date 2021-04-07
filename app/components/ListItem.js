@@ -12,6 +12,7 @@ function ListItem({
   renderLeftActions: leftAction,
   subTitle,
   title,
+  style,
   size,
 }) {
   return (
@@ -21,7 +22,7 @@ function ListItem({
         activeOpacity={0.5}
         onPress={onPress}
       >
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
           {image && <Image style={styles.image} source={image} />}
           <View style={styles.content}>
             <AppText size={size} style={styles.title}>
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     minHeight: 50,
     flexDirection: 'row',
-    marginHorizontal: 15,
+    paddingHorizontal: 15,
     backgroundColor: colors.primary,
   },
   content: {
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   subTitle: {
-    fontSize: 16,
+    fontSize: 14,
     paddingTop: 5,
     color: colors.white,
   },
