@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet, Text, SectionList, FlatList } from 'react-native';
-
 import GenreCard from '../components/GenreCard';
 import Screen from '../components/Screen';
 import SearchBar from '../components/SearchBar';

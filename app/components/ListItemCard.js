@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import colors from '../constants/colors';
 import { images, myStyles } from '../constants';
-import Text from './AppText'
+import AppText from './AppText'
 
 function ListItemCard({ image, onPress, title }) {
   return (
@@ -17,7 +17,7 @@ function ListItemCard({ image, onPress, title }) {
           <Image style={styles.image} source={images[image]} />
         </View>
         <View style={styles.titleContainer}>
-          <Text style={[myStyles.textOpenSans12, styles.title]} numberOfLines={2}>{title}</Text>
+          <AppText style={myStyles.textOpenSans12} numberOfLines={2}>{title}</AppText>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -44,9 +44,6 @@ const styles = StyleSheet.create({
   titleContainer:{
     width: '50%',
     marginLeft: 10
-  },
-  title: {
-    color: colors.white,
   },
 });
 

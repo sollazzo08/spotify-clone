@@ -1,12 +1,11 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import SearchScreen from '../screens/SearchScreen';
 import YourLibraryScreen from '../screens/YourLibraryScreen';
 import TabBar from '../components/TabBar';
 import HomeNavigator from './HomeNavigator';
+import YourLibraryNavigator from './YourLibraryNavigator';
 
 function BottomTabNavigator() {
   const Tab = createBottomTabNavigator();
@@ -38,7 +37,7 @@ function BottomTabNavigator() {
       />
       <Tab.Screen
         name="Your Library"
-        component={YourLibraryScreen}
+        component={YourLibraryNavigator}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons

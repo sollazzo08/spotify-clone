@@ -1,10 +1,20 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
-import {myStyles} from '../constants'
 
-function AppText({ children,numberOfLines, style,}) {
+
+function AppText({
+  children,
+  color = '#fff',
+  fontSize,
+  fontWeight,
+  numberOfLines,
+  style,
+}) {
   return (
-    <Text style={[styles.title, style]} numberOfLines={numberOfLines}>
+    <Text
+      style={[styles.title, { color, fontSize, fontWeight, ...style }]}
+      numberOfLines={numberOfLines}
+    >
       {children}
     </Text>
   );

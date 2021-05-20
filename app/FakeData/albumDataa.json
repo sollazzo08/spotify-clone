@@ -1,10 +1,52 @@
 [
   {
-    "title": "Swimming",
+    "id": 1,
+    "title": "Swimming1",
     "artist": "Mac Miller",
     "type": "Album",
     "year": "2018",
     "releaseDate": "August 3",
-    "totalTime": "58 min 39 sec"
+    "totalTime": "58 min 39 sec",
+    "image": "swimming"
+  },
+  {
+    "id": 2,
+    "title": "Swimming2",
+    "artist": "Mac Miller",
+    "type": "Album",
+    "year": "2018",
+    "releaseDate": "August 3",
+    "totalTime": "58 min 39 sec",
+    "image": "swimming"
+  },
+  {
+    "id": 3,
+    "title": "Swimming3",
+    "artist": "Mac Miller",
+    "type": "Album",
+    "year": "2018",
+    "releaseDate": "August 3",
+    "totalTime": "58 min 39 sec",
+    "image": "swimming"
+  },
+  {
+    "id": 4,
+    "title": "Swimming4",
+    "artist": "Mac Miller",
+    "type": "Album",
+    "year": "2018",
+    "releaseDate": "August 3",
+    "totalTime": "58 min 39 sec",
+    "image": "swimming"
+  },
+  {
+    "id": 5,
+    "title": "Swimming5",
+    "artist": "Mac Miller",
+    "type": "Album",
+    "year": "2018",
+    "releaseDate": "August 3",
+    "totalTime": "58 min 39 sec",
+    "image": "swimming"
   }
 ]      

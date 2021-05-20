@@ -8,6 +8,8 @@ import DATA from '../FakeData/homeScreen.json';
 import CoverCard from '../components/CoverCard';
 import SvgBackground from '../Icons/Svg.Background';
 import { myStyles } from '../constants';
+import HorizontalSlider from '../components/HorizontalSlider';
+import AppText from '../components/AppText';
 
 function HomeScreen({ navigation }) {
   return (
@@ -25,9 +27,13 @@ function HomeScreen({ navigation }) {
               <>
                 <View style={styles.container}>
                   <View style={styles.header}>
-                    <Text style={[myStyles.textOpenSans24, { color: 'white' }]}>
+                    <AppText
+                      fontSize={23}
+                      fontWeight="bold"
+                      style={{ paddingBottom: 10 }}
+                    >
                       {section.title}
-                    </Text>
+                    </AppText>
                   </View>
                   <View style={styles.icons}>
                     <MaterialCommunityIcons
@@ -59,36 +65,15 @@ function HomeScreen({ navigation }) {
             );
           else if (section.title === 'Recently Played')
             return (
-              <View style={styles.recentContainer}>
-                <Text
-                  style={[
-                    myStyles.textOpenSans24,
-                    { color: colors.white, paddingBottom: 10 },
-                  ]}
-                >
-                  {section.title}
-                </Text>
-                <FlatList
-                  data={section.data}
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  keyExtractor={(item) => item.title}
-                  renderItem={({ item }) => {
-                    return (
-                      <CoverCard
-                        image={item.image}
-                        title={item.title}
-                        onPress={() => navigation.navigate('AlbumPage')}
-                      />
-                    );
-                  }}
-                />
-              </View>
+              <>
+                <HorizontalSlider data={section} navigation={navigation} />
+                <HorizontalSlider data={section} navigation={navigation} />
+
+              </>
             );
         }}
         renderItem={({ item }) => {
           return null;
-          return <CoverCard image={item.image} title={item.title} />;
         }}
       />
     </Screen>

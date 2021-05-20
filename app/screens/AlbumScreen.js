@@ -10,7 +10,7 @@ import ListItemSwipeAction from '../components/ListItemSwipeAction';
 import colors from '../constants/colors';
 
 function AlbumScreen() {
-  const handleLike = () => {
+  const handleLike = () => { 
     console.log('Wow you really like that song');
   };
 
@@ -24,37 +24,37 @@ function AlbumScreen() {
         data={DATA}
         keyExtractor={(item) => item.title}
         renderItem={({ item }) => (
-            <ListItem
-              title={item.title}
-              subTitle="Mac Miller"
-              IconComponent={<Icon name="dots-horizontal" size={40} />}
-              onPress={() => console.log(`${item.title} by Mac Miller`)}
-              style={{paddingVertical: 10}}
-              renderRightActions={() => (
-                <ListItemSwipeAction
-                  IconComponent={
-                    <Icon
-                      name="heart-outline"
-                      size={60}
-                      iconColor={colors.lightgrey}
-                    />
-                  }
-                  onPress={() => handleLike()}
-                />
-              )}
-              renderLeftActions={() => (
-                <ListItemSwipeAction
-                  IconComponent={
-                    <Icon
-                      name="playlist-music-outline"
-                      size={60}
-                      iconColor={colors.lightgrey}
-                    />
-                  }
-                  onPress={() => handleAddQueue()}
-                />
-              )}
-            />
+          <ListItem
+            title={item.title}
+            subTitle="Mac Miller"
+            IconComponent={<Icon name="dots-horizontal" size={40} />}
+            onPress={() => console.log(`${item.title} by Mac Miller`)}
+            style={{ paddingVertical: 10 }}
+            renderRightActions={() => (
+              <ListItemSwipeAction
+                IconComponent={
+                  <Icon
+                    name="heart-outline"
+                    size={60}
+                    iconColor={colors.lightgrey}
+                  />
+                }
+                onPress={() => handleLike()}
+              />
+            )}
+            renderLeftActions={() => (
+              <ListItemSwipeAction
+                IconComponent={
+                  <Icon
+                    name="playlist-music-outline"
+                    size={60}
+                    iconColor={colors.lightgrey}
+                  />
+                }
+                onPress={() => handleAddQueue()}
+              />
+            )}
+          />
         )}
         ListHeaderComponent={
           <View style={styles.container}>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20
+    marginBottom: 20,
   },
   image: {
     height: 300,
