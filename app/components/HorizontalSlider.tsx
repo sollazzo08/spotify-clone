@@ -2,15 +2,21 @@ import React from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
 import AppText from './AppText';
 import CoverCard from './CoverCard';
+import { images } from '../constants'; //Imported images just for typescript.. change this
 
-function HorizontalSlider({ navigation, data }) {
+type Props = {
+  data: { id: number; title: string; image: keyof typeof images }[];
+  navigation: any;
+};
+
+const HorizontalSlider: React.FC<Props> = ({ navigation, data }) => {
   return (
     <View style={styles.recentContainer}>
       <AppText fontSize={23} fontWeight="bold" style={{ paddingBottom: 10 }}>
         Recently Played
       </AppText>
       <FlatList
-        data={data.data}
+        data={data}
         horizontal
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.title}
@@ -26,7 +32,7 @@ function HorizontalSlider({ navigation, data }) {
       />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -5,7 +5,7 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
 } from 'react-native';
-import colors from '../constants/colors';
+import {colors} from '../constants/colors';
 import { images, myStyles } from '../constants';
 import AppText from './AppText'
 

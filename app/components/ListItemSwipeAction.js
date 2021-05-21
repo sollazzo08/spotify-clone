@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import colors from '../constants/colors';
+import {colors} from '../constants/colors';
 
 function ListItemLikeAction({ IconComponent, onPress }) {
   return (

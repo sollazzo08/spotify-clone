@@ -1,5 +1,5 @@
 import images from './preloadImages';
-import colors from './colors'
+import {colors} from './colors'
 import myStyles from './globalStyles'
 import cache from './cache'
 import fonts from './fonts'

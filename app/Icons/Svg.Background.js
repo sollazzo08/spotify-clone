@@ -1,6 +1,6 @@
 import React from 'react';
 import Svg,{ Defs, LinearGradient, Rect, Stop} from 'react-native-svg'
-import colors from '../constants/colors';
+import {colors} from '../constants/colors';
 
 function SvgBackground() {
   return (

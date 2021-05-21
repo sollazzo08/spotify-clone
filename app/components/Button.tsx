@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
-import colors from '../constants/colors';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 type Props = {
   backgroundColor?: any;
@@ -8,7 +7,11 @@ type Props = {
   title: string;
 };
 
-const Button: React.FC<Props> = ({ backgroundColor = 'white', onPress, title }) => {
+const Button: React.FC<Props> = ({
+  backgroundColor = 'white',
+  onPress,
+  title,
+}) => {
   return (
     <TouchableOpacity
       onPress={onPress}

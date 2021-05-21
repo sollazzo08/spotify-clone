@@ -7,7 +7,7 @@ import DATA from '../FakeData/songData.json';
 import ListItem from '../components/ListItem';
 import Icon from '../components/Icon';
 import ListItemSwipeAction from '../components/ListItemSwipeAction';
-import colors from '../constants/colors';
+import {colors} from '../constants/colors';
 
 function AlbumScreen() {
   const handleLike = () => { 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import colors from '../constants/colors';
+import {colors} from '../constants/colors';
 import AlbumScreen from '../screens/AlbumScreen';
 import YourLibraryScreen from '../screens/YourLibraryScreen';
 

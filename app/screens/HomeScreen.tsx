@@ -1,17 +1,26 @@
 import React from 'react';
-import { FlatList, View, StyleSheet, Text, SectionList } from 'react-native';
-import colors from '../constants/colors';
+import { FlatList, View, StyleSheet, SectionList } from 'react-native';
+import { colors } from '../constants/colors';
 import Screen from '../components/Screen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ListItemCard from '../components/ListItemCard';
 import DATA from '../FakeData/homeScreen.json';
-import CoverCard from '../components/CoverCard';
 import SvgBackground from '../Icons/Svg.Background';
-import { myStyles } from '../constants';
 import HorizontalSlider from '../components/HorizontalSlider';
 import AppText from '../components/AppText';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { HomeStackParamsList } from '../navigation/HomeNavigator';
 
-function HomeScreen({ navigation }) {
+type HomeScreenNavigationProp = StackNavigationProp<
+  HomeStackParamsList,
+  'Home'
+>;
+
+type Props = {
+  navigation: HomeScreenNavigationProp;
+};
+
+function HomeScreen({ navigation }: Props) {
   return (
     <Screen>
       <View style={{ position: 'absolute' }}>
@@ -66,9 +75,8 @@ function HomeScreen({ navigation }) {
           else if (section.title === 'Recently Played')
             return (
               <>
-                <HorizontalSlider data={section} navigation={navigation} />
-                <HorizontalSlider data={section} navigation={navigation} />
-
+                <HorizontalSlider data={section.data} navigation={navigation} />
+                <HorizontalSlider data={section.data} navigation={navigation} />
               </>
             );
         }}

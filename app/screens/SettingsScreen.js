@@ -5,7 +5,7 @@ import ListItem from '../components/ListItem';
 import Button from '../components/Button';
 import DATA from '../FakeData/settings.json';
 import Icon from '../components/Icon';
-import colors from '../constants/colors';
+import {colors} from '../constants/colors';
 
 function SettingsScreen() {
   const renderItem = ({ item }) => {

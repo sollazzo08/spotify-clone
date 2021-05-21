@@ -4,8 +4,8 @@ import { Text, StyleSheet } from 'react-native';
 type Props = {
   children: React.ReactNode;
   color?: React.CSSProperties;
-  fontSize?: React.CSSProperties;
-  fontWeight?: React.CSSProperties;
+  fontSize?: React.CSSProperties | number;
+  fontWeight?: React.CSSProperties | string;
   numberOfLines?: number;
   style?: any;
 };

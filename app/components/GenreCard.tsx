@@ -1,9 +1,17 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import colors from '../constants/colors';
+import { colors } from '../constants/colors';
 import AppText from './AppText';
 
-function GenreCard({ backgroundColor = colors.lightgrey, title }) {
+type Props = {
+  backgroundColor: string;
+  title: string;
+};
+
+const GenreCard: React.FC<Props> = ({
+  backgroundColor = colors.lightgrey,
+  title,
+}) => {
   return (
     <View style={[styles.container, { backgroundColor }]}>
       <View style={styles.textContainer}>
@@ -18,7 +26,7 @@ function GenreCard({ backgroundColor = colors.lightgrey, title }) {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
