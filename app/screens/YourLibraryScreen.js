@@ -13,6 +13,7 @@ function YourLibraryScreen() {
         data={MyAlbums}
         keyExtractor={(item) => item.title}
         ListHeaderComponent={<TagContainer />}
+        stickyHeaderIndices={[0]}
         renderItem={({ item }) => {
           return(
             <ListItem 
@@ -20,6 +21,7 @@ function YourLibraryScreen() {
               subTitle={item.artist}
               image={item.image}
               style={{paddingBottom: 10}}
+              
           />
           ) 
         }}
