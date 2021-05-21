@@ -40,6 +40,7 @@ function SettingsScreen() {
         ListFooterComponent={
           <View style={styles.btnContainer}>
             <Button
+              color='red'
               onPress={() => console.log('Log Out was pressed')}
               title="LOG OUT"
             />

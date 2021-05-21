@@ -4,4 +4,4 @@ export default {
   white: '#FFFFFF',
   grey: '#242424',
   lightgrey: '#828282'
-}
+} as const
