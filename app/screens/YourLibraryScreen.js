@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, SectionList, StyleSheet } from 'react-native';
 import ListItem from '../components/ListItem';
 import Screen from '../components/Screen';
 import SearchBar from '../components/SearchBar';
 import TagContainer from '../components/TagContainer';
 import MyAlbums from '../FakeData/albumDataa.json';
+import Tags from '../FakeData/tags.json';
 
-function YourLibraryScreen() {
+function YourLibraryScreen({ navigation }) {
+  const [tags, setTags] = useState();
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      setTags(Tags);
+    });
+
+    return unsubscribe;
+  }, [navigation]);
+
   return (
     <Screen>
       <FlatList
         data={MyAlbums}
         keyExtractor={(item) => item.title}
-        ListHeaderComponent={<TagContainer />}
+        ListHeaderComponent={<TagContainer Tags={tags} navigation={navigation} />}
         stickyHeaderIndices={[0]}
         renderItem={({ item }) => {
-          return(
-            <ListItem 
+          return (
+            <ListItem
               title={item.title}
               subTitle={item.artist}
               image={item.image}
-              style={{paddingBottom: 10}}
-              
-          />
-          ) 
+              style={{ paddingBottom: 10 }}
+            />
+          );
         }}
       />
     </Screen>

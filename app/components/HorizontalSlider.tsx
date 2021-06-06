@@ -25,7 +25,7 @@ const HorizontalSlider: React.FC<Props> = ({ navigation, data }) => {
             <CoverCard
               image={item.image}
               title={item.title}
-              onPress={() => navigation.navigate('AlbumPage')}
+              onPress={() => navigation.navigate('AlbumScreen')}
             />
           );
         }}

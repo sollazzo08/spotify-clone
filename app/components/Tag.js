@@ -1,13 +1,15 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import { colors } from '../constants';
 import AppText from './AppText';
 
-const Tag = ({ title }) => {
+const Tag = ({ onPress, title }) => {
   return (
-    <View style={styles.container}>
-      <AppText color={colors.white}>{title}</AppText>
-    </View>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.container}>
+        <AppText color={colors.white}>{title}</AppText>
+      </View>
+    </TouchableOpacity>
   );
 };
 
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 8,
     borderColor: colors.lightgrey,
-    marginRight: 10
+    marginRight: 10,
   },
 });
 

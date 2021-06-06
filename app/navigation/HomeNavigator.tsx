@@ -8,7 +8,7 @@ import AlbumScreen from '../screens/AlbumScreen';
 export type HomeStackParamsList = {
   Home: undefined; //undefined means route has no params
   Settings: undefined;
-  Album: undefined;
+  AlbumScreen: undefined;
 };
 
 const HomeNavigator = () => {
@@ -37,7 +37,7 @@ const HomeNavigator = () => {
         }}
       />
       <HomeStack.Screen
-        name="Album"
+        name="AlbumScreen"
         component={AlbumScreen}
         options={{
           headerBackTitleVisible: false,

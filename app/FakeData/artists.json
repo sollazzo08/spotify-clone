@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "artist": "Mac Miller",
+    "image": "swimming"
+  },
+  {
+    "id": 2,
+    "artist": "Foster the People",
+    "image": "swimming"
+  },
+  {
+    "id": 3,
+    "artist": "Two Door Cinema Club",
+    "image": "swimming"
+  },
+  {
+    "id": 4,
+    "artist": "Bob Marley",
+    "image": "swimming"
+  },
+  {
+    "id": 5,
+    "artist": "Modest Mouse",
+    "image": "swimming"
+  },
+  {
+    "id": 6,
+    "artist": "Alt-J",
+    "image": "swimming"
+  },
+  {
+    "id": 7,
+    "artist": "The Rolling Stones",
+    "image": "swimming"
+  }
+]      
