@@ -5,23 +5,28 @@ import { colors } from '../constants';
 import TAGS from '../FakeData/tags.json';
 import Tag from './Tag';
 
-const TagContainer = ({ Tags, navigation }) => {
+const TagContainer = ({ showCategory }) => {
   const [tags, setTags] = useState(TAGS);
   const [activeTag, setActiveTag] = useState(false);
 
+
   useEffect(() => {
-    console.log(tags);
+    () => showCategory()
   }, [tags]);
+
 
   const handleTagFilter = (item) => {
     // Show Icon
     const filteredTags = tags.filter((t) => t.id === item.id);
     setTags(filteredTags);
     setActiveTag(true);
+
+    //Handle what list to show
+
   };
   const handleCloseTag = () => {
-    setActiveTag(false)
-    setTags(TAGS)
+    setActiveTag(false);
+    setTags(TAGS);
   };
 
   return (
@@ -63,8 +68,8 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     borderColor: '#000',
     borderBottomWidth: 2,
-    shadowColor: "#000",
-    shadowOffset:{  width: 0,  height: 10  },
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 10,
   },
   tags: {

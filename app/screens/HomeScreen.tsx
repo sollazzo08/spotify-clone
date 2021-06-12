@@ -23,7 +23,7 @@ type Props = {
 function HomeScreen({ navigation }: Props) {
   React.useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      console.log('test3');
+      
     });
     return unsubscribe;
   }, [navigation]);
