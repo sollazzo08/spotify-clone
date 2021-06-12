@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { FlatList, View, StyleSheet, SectionList } from 'react-native';
 import { colors } from '../constants/colors';
 import Screen from '../components/Screen';
@@ -21,10 +21,9 @@ type Props = {
 };
 
 function HomeScreen({ navigation }: Props) {
-
   React.useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      console.log('test3')
+      console.log('test3');
     });
     return unsubscribe;
   }, [navigation]);

@@ -15,25 +15,19 @@ const AppText: React.FC<Props> = ({
   children,
   color = '#fff',
   textDecorationLine,
-  fontSize,
+  fontSize = 16,
   fontWeight,
   numberOfLines,
   style,
 }) => {
   return (
     <Text
-      style={[styles.title, { color, fontSize, fontWeight,textDecorationLine, ...style }]}
+      style={{ color, fontSize, fontWeight, textDecorationLine, ...style }}
       numberOfLines={numberOfLines}
     >
       {children}
     </Text>
   );
 };
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 16,
-  },
-});
 
 export default AppText;

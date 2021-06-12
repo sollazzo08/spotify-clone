@@ -3,7 +3,7 @@ import { FlatList, SectionList, StyleSheet } from 'react-native';
 import ListItem from '../components/ListItem';
 import Screen from '../components/Screen';
 import SearchBar from '../components/SearchBar';
-import TagContainer from '../components/TagContainer';
+import YourLibraryHeader from '../components/YourLibraryHeader';
 import MyAlbums from '../FakeData/albumDataa.json';
 import Tags from '../FakeData/tags.json';
 
@@ -23,7 +23,7 @@ function YourLibraryScreen({ navigation }) {
       <FlatList
         data={MyAlbums}
         keyExtractor={(item) => item.title}
-        ListHeaderComponent={<TagContainer Tags={tags} navigation={navigation} />}
+        ListHeaderComponent={<YourLibraryHeader tags={tags} navigation={navigation}/>}
         stickyHeaderIndices={[0]}
         renderItem={({ item }) => {
           return (

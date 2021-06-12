@@ -5,7 +5,6 @@ import ListItem from '../components/ListItem';
 import Button from '../components/Button';
 import DATA from '../FakeData/settings.json';
 import Icon from '../components/Icon';
-import {colors} from '../constants/colors';
 
 function SettingsScreen() {
   const renderItem = ({ item }) => {
@@ -28,7 +27,7 @@ function SettingsScreen() {
         ListHeaderComponent={
           <View style={styles.profile}>
             <ListItem
-              image={require('../assets/favicon.jpeg')}
+              image={require('../assets/lego_dude.jpeg')}
               IconComponent={<Icon name="chevron-right" size={50} />}
               onPress={() => console.log('View profile was pressed')}
               title="Michael Sollazzo"
@@ -40,7 +39,7 @@ function SettingsScreen() {
         ListFooterComponent={
           <View style={styles.btnContainer}>
             <Button
-              color='red'
+              color="red"
               onPress={() => console.log('Log Out was pressed')}
               title="LOG OUT"
             />
