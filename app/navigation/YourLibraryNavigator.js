@@ -11,7 +11,7 @@ function YourLibraryNavigator() {
       <YourLibraryStack.Screen
         name="Your Library"
         component={YourLibraryScreen}
-        options={{ headerShown: true }}
+        options={{ headerShown: false}}
       />
     </YourLibraryStack.Navigator>
   );

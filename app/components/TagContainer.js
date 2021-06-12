@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
-import Tags from '../FakeData/tags.json';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { colors } from '../constants';
+import TAGS from '../FakeData/tags.json';
 import Tag from './Tag';
 
-const TagContainer = ({Tags, navigation}) => {
-  const [tags, setTags] = useState();
+const TagContainer = ({ Tags, navigation }) => {
+  const [tags, setTags] = useState(TAGS);
+  const [activeTag, setActiveTag] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      setTags(Tags);
-    });
-
-    return unsubscribe;
-  }, [navigation]);
+    console.log(tags);
+  }, [tags]);
 
   const handleTagFilter = (item) => {
-    const filteredTags = Tags.filter((t) => t.id === item.id);
-
-    console.log(filteredTags);
+    // Show Icon
+    const filteredTags = tags.filter((t) => t.id === item.id);
     setTags(filteredTags);
+    setActiveTag(true);
+  };
+  const handleCloseTag = () => {
+    setActiveTag(false)
+    setTags(TAGS)
   };
 
   return (
@@ -26,9 +29,25 @@ const TagContainer = ({Tags, navigation}) => {
       <FlatList
         data={tags}
         horizontal
+        showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.title}
         renderItem={({ item }) => (
-          <Tag onPress={() => handleTagFilter(item)} title={item.title} />
+          <View style={styles.tags}>
+            <Tag
+              activeTag={activeTag}
+              IconComponent={
+                <MaterialCommunityIcons
+                  name="close-circle-outline"
+                  size={30}
+                  color={colors.lightgrey}
+                  onPress={handleCloseTag}
+                />
+              }
+              onPressTag={() => handleTagFilter(item)}
+              onPressClose={() => handleCloseTag()}
+              title={item.title}
+            />
+          </View>
         )}
       />
     </View>
@@ -38,9 +57,20 @@ const TagContainer = ({Tags, navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
+    height: 45,
     justifyContent: 'space-between',
-    alignItems: 'center',
     marginVertical: 15,
+    borderColor: '#000',
+    borderBottomWidth: 2,
+    shadowColor: "#000",
+    shadowOffset:{  width: 0,  height: 10  },
+    shadowOpacity: 10,
+  },
+  tags: {
+    flex: 1,
+    flexDirection: 'row',
+    marginLeft: 10,
   },
 });
 

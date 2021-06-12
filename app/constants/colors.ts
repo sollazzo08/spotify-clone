@@ -3,5 +3,6 @@ export const colors = {
   secondary: '#1D8954',
   white: '#FFFFFF',
   grey: '#242424',
-  lightgrey: '#828282'
+  lightgrey: '#828282',
+  spotifyGreen: '#1DB954'
 } 

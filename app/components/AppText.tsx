@@ -4,6 +4,7 @@ import { Text, StyleSheet } from 'react-native';
 type Props = {
   children: React.ReactNode;
   color?: React.CSSProperties;
+  textDecorationLine?: React.CSSProperties | string;
   fontSize?: React.CSSProperties | number;
   fontWeight?: React.CSSProperties | string;
   numberOfLines?: number;
@@ -13,6 +14,7 @@ type Props = {
 const AppText: React.FC<Props> = ({
   children,
   color = '#fff',
+  textDecorationLine,
   fontSize,
   fontWeight,
   numberOfLines,
@@ -20,7 +22,7 @@ const AppText: React.FC<Props> = ({
 }) => {
   return (
     <Text
-      style={[styles.title, { color, fontSize, fontWeight, ...style }]}
+      style={[styles.title, { color, fontSize, fontWeight,textDecorationLine, ...style }]}
       numberOfLines={numberOfLines}
     >
       {children}

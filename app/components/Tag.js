@@ -3,13 +3,21 @@ import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import { colors } from '../constants';
 import AppText from './AppText';
 
-const Tag = ({ onPress, title }) => {
+const Tag = ({ activeTag, IconComponent, onPressTag, title }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View style={styles.container}>
-        <AppText color={colors.white}>{title}</AppText>
-      </View>
-    </TouchableOpacity>
+    <>
+      {activeTag && IconComponent}
+      <TouchableOpacity onPress={onPressTag}>
+        <View
+          style={[
+            styles.container,
+            { backgroundColor: activeTag ? colors.secondary : null },
+          ]}
+        >
+          <AppText color={colors.white} textDecorationLine='underline'>{title}</AppText>
+        </View>
+      </TouchableOpacity>
+    </>
   );
 };
 
@@ -18,11 +26,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 30,
-    width: 90,
+    width: '100%',
     borderWidth: 1,
-    borderRadius: 8,
+    borderRadius: 20,
     borderColor: colors.lightgrey,
-    marginRight: 10,
+    marginRight: 20,
+    textDecorationLine: 'underline'
   },
 });
 
