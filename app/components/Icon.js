@@ -2,9 +2,9 @@ import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-function Icon({ name, size, iconColor = '#FFF' }) {
+function Icon({ name, size, iconColor = '#FFF', onPress }) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <View
         style={{
           height: size,

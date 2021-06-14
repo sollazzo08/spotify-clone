@@ -1,46 +1,109 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, SectionList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, SectionList, StyleSheet } from 'react-native';
 import ListItem from '../components/ListItem';
 import Screen from '../components/Screen';
 import YourLibraryHeader from '../components/YourLibraryHeader';
-import MyAlbums from '../FakeData/albumDataa.json';
-import Tags from '../FakeData/tags.json';
-import Artists from '../FakeData/artists.json'
+import YourLibraryListHeader from '../components/YourLibraryListHeader';
+import {
+  Albums,
+  Artists,
+  PodcastsAndShows,
+  Playlists,
+  Tags,
+} from '../FakeData';
 
 function YourLibraryScreen({ navigation }) {
-  const [tags, setTags] = useState();
-  const [categories, setCategories] = useState();
+  const [tags] = useState();
+  const [listOrGrid, setListOrGrid] = useState(true);
+  const [categories, setCategories] = useState('Playlists');
 
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      setTags(Tags);
-    });
-
-    return unsubscribe;
-  }, [navigation]);
-
-  function showCategory (item)  {
-    console.log('test')
+  const showCategory = (item) => {
+    setCategories(item.title);
+    console.log(item.title);
   };
 
   return (
     <Screen>
-      <FlatList
-        data={Artists}
-        keyExtractor={(item) => item.title}
-        ListHeaderComponent={<YourLibraryHeader tags={tags} navigation={navigation} showCategory={showCategory}/>}
-        stickyHeaderIndices={[0]}
-        renderItem={({ item }) => {
-          return (
-            <ListItem
-              title={item.title}
-              subTitle={item.artist}
-              image={item.image}
-              style={{ paddingBottom: 10 }}
-            />
-          );
-        }}
+      <YourLibraryHeader
+        tags={tags}
+        navigation={navigation}
+        showCategory={showCategory}
       />
+      {categories === 'Playlists' && (
+        <FlatList
+          data={Playlists}
+          key={listOrGrid ? 'list' : 'grid'}
+          keyExtractor={(item) => item.title}
+          numColumns={listOrGrid ? 0 : 2}
+          ListHeaderComponent={
+            <YourLibraryListHeader
+              listOrGrid={listOrGrid}
+              setListOrGrid={setListOrGrid}
+            />
+          }
+          renderItem={({ item }) => {
+            return (
+              <ListItem
+                title={item.title}
+                subTitle={item.artist}
+                image={item.image}
+                style={{ paddingBottom: 10 }}
+              />
+            );
+          }}
+        />
+      )}
+      {categories === 'Albums' && (
+        <FlatList
+          data={Albums}
+          keyExtractor={(item) => item.title}
+          ListHeaderComponent={<YourLibraryListHeader />}
+          renderItem={({ item }) => {
+            return (
+              <ListItem
+                title={item.title}
+                subTitle={item.artist}
+                image={item.image}
+                style={{ paddingBottom: 10 }}
+              />
+            );
+          }}
+        />
+      )}
+      {categories === 'Artists' && (
+        <FlatList
+          data={Artists}
+          keyExtractor={(item) => item.title}
+          ListHeaderComponent={<YourLibraryListHeader />}
+          renderItem={({ item }) => {
+            return (
+              <ListItem
+                title={item.title}
+                subTitle={item.artist}
+                image={item.image}
+                style={{ paddingBottom: 10 }}
+              />
+            );
+          }}
+        />
+      )}
+      {categories === 'Podcasts & Shows' && (
+        <FlatList
+          data={PodcastsAndShows}
+          keyExtractor={(item) => item.title}
+          ListHeaderComponent={<YourLibraryListHeader />}
+          renderItem={({ item }) => {
+            return (
+              <ListItem
+                title={item.title}
+                subTitle={item.artist}
+                image={item.image}
+                style={{ paddingBottom: 10 }}
+              />
+            );
+          }}
+        />
+      )}
     </Screen>
   );
 }

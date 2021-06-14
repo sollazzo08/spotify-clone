@@ -13,11 +13,11 @@ function ListItem({
   renderRightActions: rightAction,
   renderLeftActions: leftAction,
   subTitle,
+  toggle = true,
   title,
   style,
   fontSize = 16,
 }) {
-
   return (
     <Swipeable renderRightActions={rightAction} renderLeftActions={leftAction}>
       <TouchableHighlight
@@ -27,7 +27,10 @@ function ListItem({
       >
         <View style={[styles.container, style]}>
           {image && (
-            <Image style={[styles.image,{borderRadius:  imageRound ? 35 : 0 } ]} source={images[image] || image} />
+            <Image
+              style={[styles.image, { borderRadius: imageRound ? 35 : 0 }]}
+              source={images[image] || image}
+            />
           )}
           <View style={styles.content}>
             <AppText fontSize={fontSize} style={styles.title}>
@@ -35,8 +38,8 @@ function ListItem({
             </AppText>
             {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
           </View>
-          <View>{IconComponent}</View>
-          <View>{IconComponent2}</View>
+          {toggle && <View>{IconComponent}</View>}
+          {!toggle && <View>{IconComponent2}</View>}
         </View>
       </TouchableHighlight>
     </Swipeable>

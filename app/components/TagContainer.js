@@ -9,11 +9,10 @@ const TagContainer = ({ showCategory }) => {
   const [tags, setTags] = useState(TAGS);
   const [activeTag, setActiveTag] = useState(false);
 
+  // useEffect(() => {
+  //   console.log(tags)
 
-  useEffect(() => {
-    () => showCategory()
-  }, [tags]);
-
+  // }, [tags]);
 
   const handleTagFilter = (item) => {
     // Show Icon
@@ -22,7 +21,7 @@ const TagContainer = ({ showCategory }) => {
     setActiveTag(true);
 
     //Handle what list to show
-
+    showCategory(item);
   };
   const handleCloseTag = () => {
     setActiveTag(false);

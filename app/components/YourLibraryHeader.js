@@ -4,7 +4,7 @@ import TagContainer from './TagContainer';
 import ListItem from './ListItem';
 import Icon from './Icon';
 
-const YourLibraryHeader = (showCategory, tags, navigation) => {
+const YourLibraryHeader = ({showCategory, tags, navigation}) => {
 
   return (
     <View style={styles.container}>
@@ -22,7 +22,9 @@ const YourLibraryHeader = (showCategory, tags, navigation) => {
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    height: 130
+  },
 });
 
 export default YourLibraryHeader;
