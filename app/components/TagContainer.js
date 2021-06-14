@@ -21,11 +21,12 @@ const TagContainer = ({ showCategory }) => {
     setActiveTag(true);
 
     //Handle what list to show
-    showCategory(item);
+    showCategory(item.title);
   };
   const handleCloseTag = () => {
     setActiveTag(false);
     setTags(TAGS);
+    showCategory("Playlists");
   };
 
   return (

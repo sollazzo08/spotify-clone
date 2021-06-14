@@ -14,7 +14,13 @@ const Tag = ({ activeTag, IconComponent, onPressTag, title }) => {
             { backgroundColor: activeTag ? colors.secondary : null },
           ]}
         >
-          <AppText color={colors.white} textDecorationLine='underline'>{title}</AppText>
+          <AppText
+            color={colors.white}
+            textDecorationLine="underline"
+            fontSize={14}
+          >
+            {title}
+          </AppText>
         </View>
       </TouchableOpacity>
     </>
@@ -31,7 +37,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: colors.lightgrey,
     marginRight: 20,
-    textDecorationLine: 'underline'
+    textDecorationLine: 'underline',
   },
 });
 

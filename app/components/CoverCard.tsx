@@ -15,7 +15,7 @@ interface Props {
   subTitle?: string;
   title: string;
 }
-
+//TODO: Make the cover cards sizeable
 const CoverCard: React.FC<Props> = ({ image, onPress, subTitle, title }) => {
   return (
     <TouchableWithoutFeedback onPress={onPress}>

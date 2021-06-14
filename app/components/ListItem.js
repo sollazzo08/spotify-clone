@@ -7,17 +7,19 @@ import AppText from './AppText';
 function ListItem({
   image,
   imageRound = false,
+  MainIconComponent,
   IconComponent,
   IconComponent2,
   onPress,
   renderRightActions: rightAction,
   renderLeftActions: leftAction,
   subTitle,
-  toggle = true,
+  toggle = true, //TODO: This prop currently breaks this component
   title,
   style,
   fontSize = 16,
 }) {
+
   return (
     <Swipeable renderRightActions={rightAction} renderLeftActions={leftAction}>
       <TouchableHighlight
@@ -26,12 +28,12 @@ function ListItem({
         onPress={onPress}
       >
         <View style={[styles.container, style]}>
-          {image && (
+          {image ? (
             <Image
               style={[styles.image, { borderRadius: imageRound ? 35 : 0 }]}
               source={images[image] || image}
             />
-          )}
+          ): MainIconComponent}
           <View style={styles.content}>
             <AppText fontSize={fontSize} style={styles.title}>
               {title}

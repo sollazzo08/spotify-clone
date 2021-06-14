@@ -10,6 +10,13 @@ const YourLibraryHeader = ({ listOrGrid, setListOrGrid }) => {
         title="Recently Played"
         toggle={listOrGrid}
         fontSize={15}
+        MainIconComponent={
+          <Icon
+            name="swap-vertical"
+            size={45}
+            onPress={() => console.log('Filter recently played')}
+          />
+        }
         IconComponent={
           <Icon
             name="format-list-bulleted"
@@ -30,7 +37,9 @@ const YourLibraryHeader = ({ listOrGrid, setListOrGrid }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    height: 60
+  },
 });
 
 export default YourLibraryHeader;
