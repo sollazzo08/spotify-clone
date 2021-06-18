@@ -4,10 +4,12 @@ import SettingsScreen from '../screens/SettingsScreen';
 import HomeScreen from '../screens/HomeScreen';
 import { colors } from '../constants/colors';
 import AlbumScreen from '../screens/AlbumScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 export type HomeStackParamsList = {
   Home: undefined; //undefined means route has no params
   Settings: undefined;
+  ProfileScreen: undefined;
   AlbumScreen: undefined;
 };
 
@@ -46,6 +48,10 @@ const HomeNavigator = () => {
             borderBottomColor: colors.primary,
           },
         }}
+      />
+      <HomeStack.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
       />
     </HomeStack.Navigator>
   );
