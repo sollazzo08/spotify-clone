@@ -25,9 +25,7 @@ const ProfileScreen = () => {
         <AppText>Michael Sollazzo</AppText>
         <Button title="Edit Profile" onPress={() => console.log('hehehhehe')} />
       </View>
-      <View>
-        
-      </View>
+      <View></View>
       <Modal visible={visibleModal}>
         <Screen>
           <View style={styles.container}>
@@ -41,7 +39,7 @@ const ProfileScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: .5,
+    flex: 0.5,
     justifyContent: 'center',
     alignItems: 'center',
   },
