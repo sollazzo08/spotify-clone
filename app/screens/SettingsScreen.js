@@ -6,7 +6,7 @@ import Button from '../components/Button';
 import DATA from '../FakeData/settings.json';
 import Icon from '../components/Icon';
 
-function SettingsScreen({navigation}) {
+function SettingsScreen({ navigation }) {
   const renderItem = ({ item }) => {
     return (
       <ListItem
@@ -29,7 +29,7 @@ function SettingsScreen({navigation}) {
             <ListItem
               image={require('../assets/lego_dude.jpeg')}
               IconComponent={<Icon name="chevron-right" size={50} />}
-              onPress={() => navigation.navigate("ProfileScreen")}
+              onPress={() => navigation.navigate('ProfileScreen')}
               title="Michael Sollazzo"
               subTitle="View Profile"
               size={28}

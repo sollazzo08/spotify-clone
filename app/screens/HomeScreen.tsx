@@ -22,16 +22,14 @@ type Props = {
 
 function HomeScreen({ navigation }: Props) {
   React.useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      
-    });
+    const unsubscribe = navigation.addListener('focus', () => {});
     return unsubscribe;
   }, [navigation]);
 
   return (
     <Screen>
       <View style={{ position: 'absolute' }}>
-        <SvgBackground />
+        <SvgBackground topColor={colors.blue} x2='20%'/>
       </View>
       <SectionList
         sections={DATA}

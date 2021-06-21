@@ -1,23 +1,31 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types'
+import { colors } from '../constants/colors';
 
-type Props = {
+type BtnProps = {
+  children?: React.ReactNode;
   backgroundColor?: any;
+  height?: number;
   onPress: () => void;
-  title: string;
+  title?: string;
+  width: string;
 };
 
-const Button: React.FC<Props> = ({
-  backgroundColor = 'white',
+const Button: React.FC<BtnProps> = ({
+  children,
+  backgroundColor,
+  height,
   onPress,
   title,
+  width
 }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.button, { backgroundColor }]}
+      style={[styles.button, { backgroundColor, height, width }]}
     >
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title}>{title || children}</Text>
     </TouchableOpacity>
   );
 };
@@ -26,10 +34,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     borderRadius: 23,
-    height: 50,
     justifyContent: 'center',
-    backgroundColor: 'white',
-    width: '100%',
   },
   title: {
     fontSize: 16,
@@ -37,5 +42,11 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
+
+Button.defaultProps = {
+  backgroundColor: colors.white,
+  height: 50,
+  width: '100%'
+}
 
 export default Button;
