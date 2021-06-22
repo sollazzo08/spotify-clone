@@ -7,7 +7,7 @@ import Button from '../components/Button';
 import Icon from '../components/Icon';
 import { colors } from '../constants';
 
-const ProfileScreen = () => {
+const ProfileScreen = ({ navigation }) => {
   const [visibleModal, setVisibleModal] = useState(false);
 
   return (
@@ -15,12 +15,26 @@ const ProfileScreen = () => {
       <View style={{ position: 'absolute' }}>
         <SvgBackground topColor={colors.davysGrey} x2="100%" offset1="60%" />
       </View>
-      <Icon
-        onPress={() => setVisibleModal(true)}
-        name="dots-horizontal"
-        size={45}
-        color={colors.white}
-      />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <Icon
+          onPress={() => navigation.navigate('Settings')}
+          name="chevron-left"
+          size={65}
+          color={colors.white}
+        />
+        <Icon
+          onPress={() => setVisibleModal(true)}
+          name="dots-horizontal"
+          size={45}
+          color={colors.white}
+        />
+      </View>
       <View style={styles.container}>
         <Image
           style={styles.image}
@@ -38,11 +52,24 @@ const ProfileScreen = () => {
           <AppText>Edit profile</AppText>
         </Button>
       </View>
-      <View></View>
+      <View style={styles.socialsContainer}>
+        <View style={styles.socials}>
+          <AppText>9</AppText>
+          <AppText>Playlists</AppText>
+        </View>
+        <View>
+          <AppText>10</AppText>
+          <AppText>Followers</AppText>
+        </View>
+        <View>
+          <AppText>24</AppText>
+          <AppText>Following</AppText>
+        </View>
+      </View>
       <Modal visible={visibleModal} animationType="slide" transparent={true}>
-          <Screen style={styles.modal}>
-            <Button onPress={() => setVisibleModal(false)} title="close" />
-          </Screen>
+        <Screen style={styles.modal}>
+          <Button onPress={() => setVisibleModal(false)} title="close" />
+        </Screen>
       </Modal>
     </Screen>
   );
@@ -59,14 +86,22 @@ const styles = StyleSheet.create({
     width: 140,
     borderRadius: 70,
   },
+  socialsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: 20
+  },
+  socials: {
+    flexDirection: 'column'
+  },
   modal: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.grey,
-    opacity: .99
-
+    opacity: 0.99,
   },
+
 });
 
 export default ProfileScreen;

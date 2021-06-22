@@ -1,0 +1,32 @@
+
+//Redux brainstorm 
+
+
+ - state container
+   - playlists slice
+      data = playlist array
+  - actions 
+      -> add a song           
+      -> remove a song
+      -> queue a song
+      -> play a song
+      {
+        type: "ADD_SONG",
+        payload: {
+          title: "BKNY - feat. Old Money"
+        },
+      }
+  - reducer
+      function reducer(st,ate action) => {
+        if(action === ADD_SONG){
+          //Mutation
+          state.playlists.push(action.payload)
+        }
+      }
+
+
+
+
+
+
+

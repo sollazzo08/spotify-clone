@@ -52,6 +52,7 @@ const HomeNavigator = () => {
       <HomeStack.Screen
         name="ProfileScreen"
         component={ProfileScreen}
+        options={{headerShown: false}}
       />
     </HomeStack.Navigator>
   );
