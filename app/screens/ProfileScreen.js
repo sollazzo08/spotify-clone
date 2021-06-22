@@ -40,7 +40,7 @@ const ProfileScreen = ({ navigation }) => {
           style={styles.image}
           source={require('../assets/lego_dude.jpeg')}
         />
-        <AppText color={colors.white} fontSize={30} fontWeight="600">
+        <AppText color={colors.white} fontSize={28} fontWeight="600">
           Michael Sollazzo
         </AppText>
         <Button
@@ -57,11 +57,11 @@ const ProfileScreen = ({ navigation }) => {
           <AppText>9</AppText>
           <AppText>Playlists</AppText>
         </View>
-        <View>
+        <View style={styles.socials}>
           <AppText>10</AppText>
           <AppText>Followers</AppText>
         </View>
-        <View>
+        <View style={styles.socials}>
           <AppText>24</AppText>
           <AppText>Following</AppText>
         </View>
@@ -89,10 +89,12 @@ const styles = StyleSheet.create({
   socialsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginTop: 20
+    marginTop: 30
   },
   socials: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignItems: 'center',
+    textTransform: 'uppercase'
   },
   modal: {
     flex: 1,

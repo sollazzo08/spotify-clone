@@ -2,7 +2,6 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import SearchScreen from '../screens/SearchScreen';
-import YourLibraryScreen from '../screens/YourLibraryScreen';
 import TabBar from '../components/TabBar';
 import HomeNavigator from './HomeNavigator';
 import YourLibraryNavigator from './YourLibraryNavigator';

@@ -1,7 +1,6 @@
 
 //Redux brainstorm 
 
-
  - state container
    - playlists slice
       data = playlist array

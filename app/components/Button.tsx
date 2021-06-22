@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
-import PropTypes from 'prop-types'
 import { colors } from '../constants/colors';
 
 type BtnProps = {

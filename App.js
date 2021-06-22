@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Modal, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './app/navigation/BottomTabNavigator';
 import AppLoading from 'expo-app-loading';
@@ -13,8 +13,6 @@ import CoverCard from './app/components/CoverCard';
 import GenreCard from './app/components/GenreCard';
 import loadAssetsAsync from './app/constants/cache';
 
-
-
 export default function App() {
   const [isReady, setIsReady] = useState(false);
 
@@ -23,13 +21,25 @@ export default function App() {
       <AppLoading
         startAsync={loadAssetsAsync.loadAssetsAsync}
         onFinish={() => {
-          setIsReady(true)}}
+          setIsReady(true);
+        }}
         onError={console.warn}
       />
     );
   }
   return (
     <NavigationContainer>
+        
+        <View
+          style={{
+            position: 'relative',
+            bottom: 80,
+            height: '7%',
+            marginTop: 'auto',
+            backgroundColor: 'red',
+          }}
+        ></View>
+  
       <BottomTabNavigator />
     </NavigationContainer>
   );
